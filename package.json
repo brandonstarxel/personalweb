@@ -1,7 +1,7 @@
 {
   "name": "personalweb",
   "version": "0.1.0",
-  "homepage": "brandonhotdog.github.io",
+  "homepage": "https://brandonhotdog.github.io/personalweb",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
