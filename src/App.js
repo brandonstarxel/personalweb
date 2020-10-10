@@ -1,6 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Vibe } from "./Vibe";
+import { PlanetSim } from "./PlanetSim";
 
 function App() {
   return (
@@ -8,6 +10,8 @@ function App() {
       <header className="App-header">
         <h1>Brandon Smith</h1>
       </header>
+      <Vibe />
+      <PlanetSim />
     </div>
   );
 }
