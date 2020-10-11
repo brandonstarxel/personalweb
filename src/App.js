@@ -1,18 +1,27 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { Home } from "./Home";
+import Error from "./Error";
+import Navigation from "./Navigation";
+
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Vibe } from "./Vibe";
 import { PlanetSim } from "./PlanetSim";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Brandon Smith</h1>
-      </header>
-      <Vibe />
-      <PlanetSim />
-    </div>
+    <BrowserRouter>
+      <div>
+        <Navigation />
+        <Switch>
+          <Route path="/" component={Home} exact />
+          {/* <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} /> */}
+          <Route component={Error} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 

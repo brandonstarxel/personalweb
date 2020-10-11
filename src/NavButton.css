@@ -1,0 +1,44 @@
+/* .hover-button .hover-button--on,
+.hover-button:hover .hover-button--off {
+  display: none;
+}
+
+.hover-button:hover .hover-button--on {
+  display: inline;
+} */
+
+.navButton {
+  width: 100px;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  text-decoration: none !important;
+  transition: background-color 0.07s ease-in-out;
+}
+
+.navButton:hover {
+  background-color: #2e2d38;
+  transition: background-color 0.07s ease-in-out;
+}
+
+.navFooterButton {
+  width: 150px;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  text-decoration: none !important;
+  transition: background-color 0.07s ease-in-out;
+}
+
+.navFooterButton:hover {
+  background-color: #2e2d38;
+  transition: background-color 0.07s ease-in-out;
+}
