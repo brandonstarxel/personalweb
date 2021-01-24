@@ -4,6 +4,7 @@ import "./App.css";
 import { Home } from "./Home";
 import Error from "./Error";
 import Navigation from "./Navigation";
+import { Helmet } from "react-helmet";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Vibe } from "./Vibe";
@@ -11,17 +12,23 @@ import { PlanetSim } from "./PlanetSim";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div>
-        <Navigation />
-        <Switch>
-          <Route path="/" component={Home} exact />
-          {/* <Route path="/about" component={About} />
+    <div>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Brandon</title>
+      </Helmet>
+      <BrowserRouter>
+        <div>
+          <Navigation />
+          <Switch>
+            <Route path="/" component={Home} exact />
+            {/* <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} /> */}
-          <Route component={Error} />
-        </Switch>
-      </div>
-    </BrowserRouter>
+            <Route component={Error} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </div>
   );
 }
 
