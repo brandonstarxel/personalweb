@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { Home } from "./Home";
+import { Diffraction } from "./Diffraction";
 import Error from "./Error";
 import Navigation from "./Navigation";
 import { Helmet } from "react-helmet";
@@ -24,6 +25,8 @@ function App() {
             <Route path="/" component={Home} exact />
             {/* <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} /> */}
+            <Route path="/physics/diffraction" component={Diffraction} />
+            <Route path="/404" component={Error} />
             <Route component={Error} />
           </Switch>
         </div>
