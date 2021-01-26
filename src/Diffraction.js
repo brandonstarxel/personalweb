@@ -70,9 +70,9 @@ export class Diffraction extends React.Component {
           </div>
           <p>
             Press{" "}
-            <span style={{ color: "hsl(150,100%,75%)" }}>Edit Aperature</span>{" "}
-            to customise an aperature. Then you can start carving out your own
-            aperature. Simply{" "}
+            <span style={{ color: "hsl(150,100%,75%)" }}>Edit Aperture</span> to
+            customise an aperture. Then you can start carving out your own
+            aperture. Simply{" "}
             <span style={{ color: "hsl(150,100%,75%)" }}>click and drag</span>{" "}
             over the white panel to start making holes in it. You can change the{" "}
             <span style={{ color: "hsl(150,100%,75%)" }}>brush size</span> and
@@ -83,12 +83,13 @@ export class Diffraction extends React.Component {
           </p>
           <p>
             You should also see a list of button on the left allowing you to
-            choose pre-defined aperatures. Note that you can clear your aperature by
-            pressing <span style={{ color: "hsl(150,100%,75%)" }}>reset</span>{" "}
-            from the buttons on the left.
+            choose pre-defined apertures. Note that you can clear your aperture
+            by pressing{" "}
+            <span style={{ color: "hsl(150,100%,75%)" }}>reset</span> from the
+            buttons on the left.
           </p>
           <p>
-            Once you're done making your aperature press{" "}
+            Once you're done making your aperture press{" "}
             <span style={{ color: "hsl(150,100%,75%)" }}>Observe Screen</span>.
             The moment you press that button a Fast Fourier Transform will be
             performed (so it may lag depending on your hardware) and you'll be
@@ -120,7 +121,7 @@ export class Diffraction extends React.Component {
           </p>
           <p>
             I was particularly impressed with how accurate the rectangular
-            aperature preset was. For comparison, here's what it looks like in
+            aperture preset was. For comparison, here's what it looks like in
             real life as demonstrated at the MIT.
           </p>
           <iframe
@@ -140,9 +141,9 @@ export class Diffraction extends React.Component {
           <MathComponent tex={String.raw`x'=kd\sin(\theta_{1})`} />
           <MathComponent tex={String.raw`y'=kd\sin(\theta_{2})`} />
           <p>
-            where d is the distance between the screen and aperature. Those two
+            where d is the distance between the screen and aperture. Those two
             angles are the vertical and horizontal angles made by an arrow from
-            the centre of the aperature to the point on the viewing screen.
+            the centre of the aperture to the point on the viewing screen.
           </p>
           <div
             style={{
@@ -156,15 +157,15 @@ export class Diffraction extends React.Component {
           </div>
           <p>
             I used the Accord C# library for the FFT implementation. The
-            aperature is a matrix of 512x512. They don't have to be 1's and 0's,
+            aperture is a matrix of 512x512. They don't have to be 1's and 0's,
             not even real numbers either, I just made it that way since it was
             easiest.
           </p>
           <p>
             Now it turns out you can't just do an FFT on the input matrix,
-            you've first got to shift it in such a way that the element corresponding to
-            the origin is at [0,0] in the matrix. The same thing needs to be
-            done again with the output of the FFT.{" "}
+            you've first got to shift it in such a way that the element
+            corresponding to the origin is at [0,0] in the matrix. The same
+            thing needs to be done again with the output of the FFT.{" "}
           </p>
           <p>
             {" "}
