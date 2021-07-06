@@ -1,6 +1,7 @@
 import React from "react";
 //import "./App.css";
 import { HomeName } from "./HomeName";
+import { Footer } from "./Footer";
 import { PlanetSim } from "./PlanetSim";
 import "./WindowsDim";
 import BrandonPortrait from "./Textures/BrandonPortrait.jpg";
@@ -32,26 +33,28 @@ export class Home extends React.Component {
   updateWindow = () => {
     this.setState({
       height: window.innerHeight,
-      width: window.innerWidth,
+      width: document.documentElement.clientWidth,
     });
   };
 
   render() {
+    this.headerIconWidth = this.state.width<720?this.state.width*(5/12):300;
+    this.headerIconSeperation = this.state.width<720?this.state.width*(1/24):30;
     return (
       <div>
-        <div style={{ width: "100%", height: 600, backgroundColor: "black" }}>
+        <div style={{ width: "100%", height: this.headerIconWidth * 2, backgroundColor: "black" }}>
           <img
             src={BrandonPortrait}
             style={{
               borderRadius: "50%",
-              width: 300,
-              height: 300,
+              width: this.headerIconWidth,
+              height: this.headerIconWidth,
               position: "absolute",
-              marginTop: 150,
-              marginLeft: this.state.width / 2 - 330,
+              marginTop: this.headerIconWidth / 2,
+              marginLeft: this.state.width / 2 - (this.headerIconWidth + this.headerIconSeperation),
             }}
           />
-          <HomeName width={this.state.width} />
+          <HomeName width={this.state.width} iconWidth={this.headerIconWidth} iconSeperation={this.headerIconSeperation}/>
         </div>
         <div
           style={{
@@ -107,7 +110,7 @@ export class Home extends React.Component {
               (displayed using{" "}
               <span style={{ color: "hsl(55,100%,75%)" }}>MathJax</span>):
             </p>
-            <MathComponent tex={String.raw`F=\frac{GMm}{r^2}`} />
+            <MathComponent tex={String.raw`F=-\frac{GMm}{r^2}`} />
             <p>
               Ahhh, it's{" "}
               <span style={{ color: "hsl(320,100%,75%)" }}>beautiful</span>{" "}
@@ -152,6 +155,16 @@ export class Home extends React.Component {
                 Masters of Physics
               </span>{" "}
               starting <span style={{ color: "hsl(100,100%,75%)" }}>2019</span>.
+            </p>
+            <p>
+              <span style={{ fontStyle: "italic", fontSize: "calc(15px + 1vmin)",}}>
+                [Note: Anything <a
+                style={{ color: "#3366BB" }}
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+              >
+                underlined
+              </a> is actually a hyperlink!]
+              </span>
             </p>
             <p>
               I like to think Oxford chose me because of my app{" "}
@@ -285,54 +298,7 @@ export class Home extends React.Component {
             </p>
           </div>
           <img src={StarxelIm} style={{ width: "60%", borderRadius: "50%" }} />
-          <div style={{ backgroundColor: "#1e1e1e", height: 50 }}>
-            {" "}
-            <div
-              style={{
-                width: "40%",
-                height: "100%",
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-            >
-              <a href="https://www.linkedin.com/in/brandon-abreu-smith/">
-                <div
-                  className="navFooterButton"
-                  style={{
-                    position: "absolute",
-                    left: this.state.width / 2 - 295,
-                    height: 50,
-                  }}
-                >
-                  LinkedIn
-                </div>
-              </a>
-              <a href="https://www.youtube.com/channel/UCISuvEbvuQ8vvHAXQdY-nhA">
-                <div
-                  className="navFooterButton"
-                  style={{
-                    position: "absolute",
-                    left: this.state.width / 2 - 95,
-                    height: 50,
-                  }}
-                >
-                  Youtube
-                </div>
-              </a>
-              <a href="https://www.facebook.com/brandon.tweeny/">
-                <div
-                  className="navFooterButton"
-                  style={{
-                    position: "absolute",
-                    left: this.state.width / 2 + 105,
-                    height: 50,
-                  }}
-                >
-                  Facebook
-                </div>
-              </a>
-            </div>
-          </div>
+          <Footer width={this.state.width} />
         </div>
       </div>
     );

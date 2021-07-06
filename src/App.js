@@ -4,7 +4,7 @@ import "./App.css";
 import { Home } from "./Home";
 import { Diffraction } from "./Diffraction";
 import Error from "./Error";
-import Navigation from "./Navigation";
+import { Navigation } from "./Navigation";
 import { Helmet } from "react-helmet";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";

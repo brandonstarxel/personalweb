@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { Footer } from "./Footer";
 import { UnityComponent } from "./UnityComponent";
 import Unity, { UnityContext } from "react-unity-webgl";
 import { MathComponent } from "mathjax-react";
@@ -21,7 +22,7 @@ export class Diffraction extends React.Component {
   updateWindow = () => {
     this.setState({
       height: window.innerHeight,
-      width: window.innerWidth,
+      width: window.document.documentElement.clientWidth,
     });
   };
 
@@ -180,8 +181,9 @@ export class Diffraction extends React.Component {
               github
             </a>
             .
-          </p>
+          </p>         
         </div>
+        <Footer width={this.state.width} />
       </div>
     );
   }

@@ -24,14 +24,14 @@ export class HomeName extends React.Component {
     return (
       <div
         style={{
-          width: 300,
-          height: 200,
+          width: this.props.iconWidth,
+          height: this.props.iconWidth * (2/3),
           position: "absolute",
-          marginTop: 200,
-          marginLeft: this.props.width / 2 + 30,
+          marginTop: this.props.iconWidth * (2/3),
+          marginLeft: this.props.width / 2 + this.props.iconSeperation,
           color: "hsl(" + this.state.nameColor + ", 100%, 75%)",
           fontWeight: "bold",
-          fontSize: 60,
+          fontSize: 60*(this.props.iconWidth/300),
           lineHeight: 1,
         }}
       >
